@@ -1,0 +1,187 @@
+@use './colors' as colors;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 13px;
+	font-weight: 500;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	background-color: colors.$light-grayish-blue;
+}
+
+.wrapper {
+	width: 90%;
+	max-width: 1400px;
+	margin: 4rem auto;
+}
+
+.card {
+	padding: 2rem;
+	margin-bottom: 2rem;
+	border-radius: 10px;
+	box-shadow: colors.$card-color;
+
+	&__first {
+		background-color: colors.$moderate-violet;
+		background-image: url('../images/bg-pattern-quotation.svg');
+		background-repeat: no-repeat;
+		background-position: 80% 0;
+	}
+
+	&__second {
+		background-color: colors.$very-dark-grayish;
+	}
+
+	&__third {
+		background-color: colors.$white;
+	}
+
+	&__fourth {
+		background-color: colors.$very-dark-blackish;
+	}
+
+	&__fifth {
+		background-color: colors.$white;
+	}
+
+	&__section {
+		display: flex;
+		align-items: center;
+	}
+
+	&__name {
+		font-weight: 600;
+		color: colors.$white;
+		font-size: 15px;
+	}
+
+	&__status {
+		color: colors.$status-color;
+	}
+
+	&__title {
+		color: colors.$white;
+		font-weight: 600;
+		font-size: 20px;
+	}
+
+	&__comment {
+		color: colors.$comment-color;
+	}
+
+	&__image {
+		border-radius: 50px;
+		width: 40px;
+		max-width: 100%;
+	}
+
+	&__info {
+		margin-left: 20px;
+	}
+
+	&__info,
+	&__title {
+		margin-bottom: 1rem;
+	}
+
+	&__title {
+		line-height: 1.3;
+	}
+
+	&__comment {
+		line-height: 1.75;
+	}
+
+	&__text--dark-text {
+		color: colors.$very-dark-grayish;
+	}
+
+	&__info > &__name {
+		margin-bottom: -15px;
+	}
+}
+
+.card__third .card__status,
+.card__fifth .card__status {
+	color: colors.$verified-graduate-color;
+}
+
+.card__third .card__comment,
+.card__fifth .card__comment {
+	color: colors.$review-paragraphs-color;
+}
+
+@media screen and (min-width: 765px) {
+	.box-cards {
+		display: grid;
+		gap: 2rem;
+		grid-auto-columns: 1fr;
+		grid-template-areas:
+			'daniel daniel jonathan'
+			'jeanette patrick patrick'
+			'kira kira kira';
+	}
+
+	.card {
+		margin-bottom: 0;
+
+		&__first {
+			grid-area: daniel;
+		}
+
+		&__second {
+			grid-area: jonathan;
+		}
+
+		&__third {
+			grid-area: jeanette;
+		}
+
+		&__fourth {
+			grid-area: patrick;
+		}
+
+		&__fifth {
+			grid-area: kira;
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.box-cards {
+		display: grid;
+		gap: 2rem;
+		grid-auto-columns: 1fr;
+		grid-template-areas:
+			'daniel daniel jonathan kira'
+			'jeanette patrick patrick kira';
+	}
+
+	.card {
+		margin-bottom: 0;
+
+		&__first {
+			grid-area: daniel;
+		}
+
+		&__second {
+			grid-area: jonathan;
+		}
+
+		&__third {
+			grid-area: jeanette;
+		}
+
+		&__fourth {
+			grid-area: patrick;
+		}
+
+		&__fifth {
+			grid-area: kira;
+		}
+	}
+}
